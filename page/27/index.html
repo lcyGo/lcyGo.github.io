@@ -67,6 +67,83 @@
         <section id="main">
   
     
+<article id="post-2018/6/7/15/Type B型IC-CPD中漏电流检测元件的EMC问题的考虑" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/6/7/15/Type B型IC-CPD中漏电流检测元件的EMC问题的考虑/" class="article-date">
+  <time datetime="2018-06-07T06:44:19.000Z" itemprop="datePublished">2018-06-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/6/7/15/Type B型IC-CPD中漏电流检测元件的EMC问题的考虑/">Type B型IC-CPD中漏电流检测元件的EMC问题的考虑</a>
+    </h1>
+  
+
+      </header>
+    
+  
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>2018-06-07 14:44:19</p>
+<p>随着电动汽车的普及,电动汽车充电的安全规范也越来越严格,众所周知,电动汽车充电一共有四种模式, 模式一由于不能提供有效的保护已经被明令禁止;模式二是在模式一基础上,在充电缆线上配备一个保护盒(IC-CPD),产生故障电流时可以进行显示、保护;模式三即以交流充电桩的方式充电;模式四即以直流充电桩的方式充电。</p>
+<p>以模式二为例,为了保证充电过程的安全,很多整车厂尤其是国外车厂和国内合资车厂,都要求能够对直流6mA的漏电进行保护,依据标准IEC 62752-2016。传统的漏电检测技术无法实现直流6mA的检测,MAGTRON公司的RCMU系列漏电传感器能够满足这一要求,并能检测到其他各种可能产生的复杂波形漏电(Type B型漏电)。</p>
+<p><img src="/images/2018/6/7/15/Type B型IC-CPD中漏电流检测元件的EMC问题的考虑/1528351747974626.jpg" alt="&quot;&quot;"></p>
+<p>图1 电动汽车充电四种模式</p>
+<p>同时,电动汽车模式二充电的缆上控制保护器(IC-CPD)属于交流慢充,可以利用低谷电价时段充电,IC-CPD主要是满足在不适合安装充电桩的车库以及作为一种备用充电方式,原则上每辆电动汽车乘用车都需要配备一台,使用场景不像充电桩那样是固定的,可能是在车库里,也可能是有插座的任何地方,所以它面对的电磁环境会更加复杂,需要保证它良好的电磁兼容性(EMC)。</p>
+<p>而漏电流传感器作为IC-CPD内最重要的实现漏电保护功能的关键性元器件,对充电过程中人体安全防护起着至关重要的作用,它的EMC问题需要着重考量。</p>
+<p>根据IEC 62752-2016标准对于EMC的要求,EMC测试标准依据IEC 61543《Residual current-operated protective device(RCDs) for household and similar use-Electromagnetic compatibility》。即家用和类似用途剩余电流保护装置的电磁兼容性标准。</p>
+<p><img src="/images/2018/6/7/15/Type B型IC-CPD中漏电流检测元件的EMC问题的考虑/1528351747701159.jpg" alt="&quot;&quot;"></p>
+<p>图2 IEC 62752-2016中关于EMC的测试要求</p>
+<p>IEC 61543规定的标准电磁环境是指与低压公共电网或类似线路连接的设备中发生的环境条件,主要包括低频电磁现象、高频电磁现象和静电放电。低频电磁现象包括谐波、谐间波、信号电压、电压幅值变化、电压不平衡、电源频率变化和感应低频电压交流电网中的直流分量辐射磁场;高频电磁现象包括传到振荡电压或电流ns级的单向瞬变传导(脉冲群)、ms级和us级的单向瞬变传导和瞬变振荡电流高频辐射现象;静电放电针对低湿度时可能存在的静电放电材料。</p>
+<p>IEC 61543对剩余电流保护器的的电磁兼容性试验主要包括两个方面,即电磁发射(EMI)和电磁抗扰度(EMS)试验。IC-CPD作为被动保护部件,一般内部没有高频振荡器,不会对外发射辐射,所以一般不做EMI试验。所以需要着重考虑EMS的问题,我们都知道,传感器是低电平电子设备,处理的是较微弱信号,漏电流传感器电源线穿过传感器,尽管有了充分的电气隔离,但是由于尺寸小,PCB和电源线距离很近,干扰极易耦合到B型漏电流传感器中,在复杂电磁环境下,外界极小的电磁干扰都有可能对输出带来极大误差,甚至错误结果。</p>
+<p>IC-CPD EMC试验中的射频辐射电磁场抗扰度试验是产品认证测试过程中比较头疼的问题,工程师在不断优化PCB设计的同时,也要选用抗扰度更优秀的元器件,这就对漏电流传感器电磁场抗扰度提出了更高的要求。</p>
+<p>IEC 61543对应的国家标准IDT版本为GB 18499《家用和类似用途的剩余电流动作保护器(RCD) 电磁兼容性》,等同采用。下图是GB 18499中关于辐射电磁场的试验要求。</p>
+<p><img src="/images/2018/6/7/15/Type B型IC-CPD中漏电流检测元件的EMC问题的考虑/1528351747516252.jpg" alt="&quot;&quot;"></p>
+<p>图3 GB18499中关于辐射电磁场的试验要求</p>
+<p><img src="/images/2018/6/7/15/Type B型IC-CPD中漏电流检测元件的EMC问题的考虑/1528351748772893.jpg" alt="&quot;&quot;"></p>
+<p>图4 GB/T 17626.3-2003中5.1内容</p>
+<p> GB/T 17626.3-2003《电磁兼容 试验和测量技术 射频电磁场辐射抗扰度试验》中规定了3种试验等级,分别对应1V/m、3V/m、10V/m场强(GB/T 17626-2016新增第四个等级,对应场强30V/m),80MHz~1GHz的频率范围。剩余电流动作保护器对应等级2,试验场强3V/m。</p>
+<p>通过对MAGTRON公司的RCMU系列漏电电流传感器进行测试,其实际电磁辐射抗扰度在垂直10V/m场强,80M~1GHz辐射频率中输出依然能够保持稳定,不会影响它的检测。</p>
+<p><img src="/images/2018/6/7/15/Type B型IC-CPD中漏电流检测元件的EMC问题的考虑/1528351748131655.jpg" alt="&quot;&quot;"></p>
+<p>图5 RCMU系列漏电流传感器电磁辐射试验</p>
+<p>IEC 62752 实际上是一个Type B型IC-CPD的基础标准,它把IC-CPD作为汽车外的部件来考虑,所以对于它的EMC要求相对来说还是比较低的。我们一般认为3V/m场强是商用级产品的要求,10V/m是工业级产品要求,车规级要求达100V/m以上,不同整车厂的要求也不同,大致在100V/m到140V/m之间。实际上我们在和整车厂的合作中发现,IC-CPD作为电动乘用车的必配部件,它的责任主体是整车厂,所以尽管IC-CPD不属于汽车的一部分,车厂依然会以车规级要求IC-CPD,而MAGTRON公司的RCMU漏电流传感器在某整车厂的IC-CPD整机试验中,通过了140V/m的考验!</p>
+<p>Magtron基于iFluxgate技术的SoC芯片整体方案,为电动汽车充电B型漏电保护提供安全可靠的元器件。</p>
+<p>【参考文献】</p>
+<p>[1] IEC 62752-2016 In-cable control and protection device for mode 2 charging of electric road vehicles(IC-CPD)</p>
+<p>[2] IEC 61543-1995 Residual current-operated protective device(RCDs) for household and similar use-Electromagnetic compatibility</p>
+<p>[3] GB/T 17626.3-2003 电磁兼容 试验和测量技术 射频电磁场辐射抗扰度试验</p>
+<p>[4] GB 18499 家用和类似用途的剩余电流动作保护器(RCD) 电磁兼容性</p>
+<p>Magtron是All Programamble PGA Sensor、磁电传感SoC的全球领先企业,致力于实现新一代更智能的、高功率密度和差异化的磁电传感系统方案。在整个行业向工业物联网和传感智能化的大趋势推动下,Magtron的创新技术Quadcore,RCMU,iShunt等创新技术使得磁电传感,特别是电流传感器应用既高度集成易用,同时实现高功率密度化,也首次实现传感器高速软件化。</p>
+<p>本文由Magtron工程师:Yangtao 授权发布,如需转载请联系MAGTRON公司~!</p>
+<p>我们的中文官网<a href="http://www.magtron.com.cn" target="_blank" rel="noopener">www.magtron.com.cn</a></p>
+<p>我们的英文官网<a href="http://www.magtronworld.com" target="_blank" rel="noopener">www.magtronworld.com</a></p>
+<p>来源：<a href="http://www.nancaiw.com/ncnews/2018/0728777206.html" target="_blank" rel="noopener">http://www.nancaiw.com/ncnews/2018/0728777206.html</a></p>
+
+      
+    
+    <br>
+    <span id="busuanzi_container_page_pv">
+         本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+   </span>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/6/7/15/Type B型IC-CPD中漏电流检测元件的EMC问题的考虑/" data-id="cji470h4g0006x0pswaonxc4k" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    
 <article id="post-2018/6/7/14/多个省份发布2017年城镇单位平均工资数据" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/6/7/14/多个省份发布2017年城镇单位平均工资数据/" class="article-date">
@@ -563,54 +640,6 @@
 
 
   
-    
-<article id="post-2018/6/7/8/财政部抽检发现部分中央预算单位未经审批自行开立银行账户" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/6/7/8/财政部抽检发现部分中央预算单位未经审批自行开立银行账户/" class="article-date">
-  <time datetime="2018-06-07T00:49:00.000Z" itemprop="datePublished">2018-06-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/6/7/8/财政部抽检发现部分中央预算单位未经审批自行开立银行账户/">财政部抽检发现部分中央预算单位未经审批自行开立银行账户</a>
-    </h1>
-  
-
-      </header>
-    
-  
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>2018-06-07 08:49:00</p>
-<p>人民网北京6月7日电 据财政部官方网站消息，近期，按照中央预算单位银行账户抽检工作机制规定的抽检比例，财政部选取国家民委、中国气象局、民盟中央、中国核工业集团、中国化工集团等5家中央一级预算单位，对其银行账户管理情况进行实地检查，检查发现上述中央预算单位银行账户管理的制度建设和运行机制比较健全，但部分单位存在未经审批自行开立银行账户等问题。</p>
-<p>从检查情况看，上述中央预算单位银行账户管理的制度建设和运行机制比较健全，但部分单位也存在一些问题，主要表现在：未经审批自行开立银行账户，少数财务人员对银行账户管理有关规定的理解和执行不到位等。针对抽检中发现的问题，财政部已分别向相关中央单位核发抽检结论，并提出具体整改意见。</p>
-<p>下一步，财政部将继续加强中央单位银行账户监管：一是督促抽检中发现存在问题的相关单位及时整改，提高银行账户管理规范性；二是组织指导各地财政监察专员办事处严格规范开展2017年度中央基层预算单位银行账户年检工作，夯实银行账户管理基础；三是主动配合机构改革涉及部门的账户开立等工作，做好账户管理政策的宣传和解释说明。</p>
-<p>来源：<a href="http://finance.people.com.cn/n1/2018/0607/c1004-30041696.html" target="_blank" rel="noopener">http://finance.people.com.cn/n1/2018/0607/c1004-30041696.html</a></p>
-
-      
-    
-    <br>
-    <span id="busuanzi_container_page_pv">
-         本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-   </span>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/6/7/8/财政部抽检发现部分中央预算单位未经审批自行开立银行账户/" data-id="cji3u5grx000pxopsmel95ptt" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -647,6 +676,10 @@
       <ul>
         
           <li>
+            <a href="/2018/6/15/11/2017年我国居民人均可支配收入同比实际增长7.3%/">2017年我国居民人均可支配收入同比实际增长7.3%</a>
+          </li>
+        
+          <li>
             <a href="/2018/6/15/10/嘉实战略配售基金个人投资者认购最后一天/">嘉实战略配售基金个人投资者认购最后一天</a>
           </li>
         
@@ -660,10 +693,6 @@
         
           <li>
             <a href="/2018/6/15/8/银保监会数据：前4个月健康险保费同比增6%/">银保监会数据：前4个月健康险保费同比增6%</a>
-          </li>
-        
-          <li>
-            <a href="/2018/6/15/8/买车险送加油卡 四家大型财险公司被银保监会重罚/">买车险送加油卡 四家大型财险公司被银保监会重罚</a>
           </li>
         
       </ul>
